@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage Select Cloud.unity
     guid: 8662879fd19965d45880d80e33d0b50b
+  - enabled: 1
+    path: Assets/Scenes/Awan Jalan.unity
+    guid: f272dac5f5bffb44aa4b0b2a82b3acd0
   m_configObjects: {}
