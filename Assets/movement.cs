@@ -7,7 +7,7 @@ public class movement : MonoBehaviour
     Rigidbody2D Rb;
     public Vector2 targetPosition;
     public float speed;
-    bool moveDone;
+    float sp;
 
 
     // Start is called before the first frame update
@@ -19,19 +19,18 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && moveDone == false)
+        if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            moveDone = true;
+            sp = speed;
         }
- 
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag=="BatasMap")
         {
-            speed = 0;
+            sp = 0;
         }
     }
 }
