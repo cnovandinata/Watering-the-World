@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
     public Vector2 targetPosition;
     public float speed;
     float sp;
+    float timer = 0.0f;
 
 
     // Start is called before the first frame update
@@ -19,12 +20,16 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        timer += Time.deltaTime;
+        if (timer > 8.0f)
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            sp = speed;
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                sp = speed;
+            }
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
         }
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
