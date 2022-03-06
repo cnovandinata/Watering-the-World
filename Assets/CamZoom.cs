@@ -12,11 +12,11 @@ public class CamZoom : MonoBehaviour
         gameCamera = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void LateUpdate()
     {
         if (Input.mouseScrollDelta.y > 0)
-            if (gameCamera.orthographicSize - Input.mouseScrollDelta.y > 1)
+            if (gameCamera.orthographicSize - Input.mouseScrollDelta.y > 0.25f)
                 gameCamera.orthographicSize = gameCamera.orthographicSize - Input.mouseScrollDelta.y;
         if (Input.mouseScrollDelta.y < 0)
             if (gameCamera.orthographicSize - Input.mouseScrollDelta.y < 5)
