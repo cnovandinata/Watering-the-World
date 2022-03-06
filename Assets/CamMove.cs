@@ -6,12 +6,11 @@ public class CamMove : MonoBehaviour
 {
     private Vector3 Origin;
     private Vector3 Difference;
-    private Vector3 ResetCamera;
     private bool drag = false;
     // Start is called before the first frame update
     void Start()
     {
-        ResetCamera = Camera.main.transform.position; 
+
     }
 
     void LateUpdate()
