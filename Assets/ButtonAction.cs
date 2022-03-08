@@ -20,8 +20,18 @@ public class ButtonAction : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void stage1()
+    public void cloudstage1()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void cloudstage2()
+    {
+        SceneManager.LoadScene(4);
+    }
+
+    public void cloudstage3()
+    {
+        SceneManager.LoadScene(5);
     }
 }
