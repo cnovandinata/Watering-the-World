@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudSpawner : MonoBehaviour
+public class Cloud1Spawner : MonoBehaviour
 {
     public GameObject cloud;
 

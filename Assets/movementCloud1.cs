@@ -10,7 +10,6 @@ public class movementCloud1 : MonoBehaviour
     float sp, timer, cloudTimer;
     bool cloudDestroy;
 
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
