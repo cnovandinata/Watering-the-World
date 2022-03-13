@@ -863,7 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708449402}
   - component: {fileID: 708449403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: awan32 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1397,7 @@ GameObject:
   - component: {fileID: 1412856163}
   - component: {fileID: 1412856164}
   - component: {fileID: 1412856165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: monyet jalan1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 1420558327}
   - component: {fileID: 1420558326}
   - component: {fileID: 1420558325}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Awan 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1997,7 +1997,7 @@ GameObject:
   - component: {fileID: 1561361282}
   - component: {fileID: 1561361281}
   - component: {fileID: 1561361283}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: sapi gerak1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
