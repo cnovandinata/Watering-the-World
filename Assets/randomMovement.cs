@@ -23,20 +23,24 @@ public class randomMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Mengatur pergerakan 
         timer += Time.deltaTime;
         if(timer >= movementTime)
         {
             targetPosition = new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f));
             timer = 0f;
-            movementTime = Random.Range(15, 25);
+            movementTime = Random.Range(10, 20);
             sp = 0.25f;
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
+
+        //Mengatur Animasi
         if (transform.position.x == targetPosition.x && transform.position.y == targetPosition.y)
             animator.SetBool("Move", false);
         else
             animator.SetBool("Move", true);
+
+        //Mengatur arah sprite
         if (flipped)
         {
             if (targetPosition.x > transform.position.x)
@@ -56,14 +60,6 @@ public class randomMovement : MonoBehaviour
                 transform.localScale = newScale;
                 flipped = true;
             }
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "BatasMap")
-        {
-            sp = 0;
         }
     }
 }
