@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class movementCloud1 : MonoBehaviour
 {
+    public GameObject cloud;
     Rigidbody2D rb;
     public Vector2 targetPosition;
     float speed = 0.25f;
     float sp, timer, cloudTimer;
-    bool cloudDestroy;
+    public bool cloudDestroy;
 
     void Start()
     {
@@ -35,9 +36,9 @@ public class movementCloud1 : MonoBehaviour
         if (cloudDestroy == true)
         {
             cloudTimer += Time.deltaTime;
-            if (cloudTimer > 16.0f)
+            if (cloudTimer > 16.01f)
             {
-                Destroy(gameObject);
+                Destroy(cloud);
             }
         }
     }
