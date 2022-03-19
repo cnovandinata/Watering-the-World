@@ -17,7 +17,7 @@ public class randomMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         targetPosition = new Vector2(transform.position.x, transform.position.y);
         movementTime = Random.Range(10, 20);
-        timer = 0f;
+        timer = movementTime;
     }
 
     // Update is called once per frame
