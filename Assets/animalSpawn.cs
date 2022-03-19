@@ -12,7 +12,7 @@ public class animalSpawn : MonoBehaviour
     void Start()
     {
         spawnTime = Random.Range(40, 50);
-        timer = spawnTime;
+        timer = 0f;
     }
 
     private void createAnimal()
