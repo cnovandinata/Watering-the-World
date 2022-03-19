@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class animalSpawn : MonoBehaviour
 {
-
+    public GameObject camera;
     public GameObject monkey;
     public GameObject cow;
     float spawnTime, timer;
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = Random.Range(40, 50);
+        spawnTime = Random.Range(25, 40);
         timer = 0f;
     }
 
     private void createAnimal()
     {
         int choice = Random.Range(0, 2);
+        camera.GetComponent<winloseScript>().animalNum += 1;
         if (choice == 0)
         {
             GameObject a = Instantiate(monkey) as GameObject;

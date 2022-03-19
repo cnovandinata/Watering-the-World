@@ -11,6 +11,7 @@ public class randomMovement : MonoBehaviour
     public Animator animator;
     bool flipped = false;
     Vector3 newScale;
+    public GameObject camera;
 
     void Start()
     {
@@ -68,7 +69,10 @@ public class randomMovement : MonoBehaviour
         if (collision.gameObject.tag == "awan")
         {
             if(collision.gameObject.GetComponent<movementCloud1>().cloudDestroy == true)
+            {
+                camera.GetComponent<winloseScript>().animalNum -= 1;
                 Destroy(gameObject);
+            }
         }
     }
 }
