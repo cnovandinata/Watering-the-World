@@ -18,7 +18,7 @@ public class Cloud1Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time<=0 && start.cloudDestroy == true)
+        if (time<=0 && start.respawn == true)
         {
             Instantiate(cloud, transform.position, Quaternion.identity);
             time = timer;
@@ -27,5 +27,6 @@ public class Cloud1Spawner : MonoBehaviour
         {
             time -= Time.deltaTime;
         }
+
     }
 }
