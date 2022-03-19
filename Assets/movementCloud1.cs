@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class movementCloud1 : MonoBehaviour
 {
-    public GameObject cloud;
+    public Animator anim;
     Rigidbody2D rb;
     public Vector2 targetPosition;
     float speed = 0.25f;
     float sp, timer, cloudTimer;
-    public bool cloudDestroy;
+    bool cek;
+    public bool respawn;
 
     void Start()
     {
@@ -27,23 +28,14 @@ public class movementCloud1 : MonoBehaviour
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 sp = speed;
-                cloudDestroy = true;
+                anim.SetBool("Move", true);
+                respawn = true;
             }
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
         }
-
-        // Jika kapasistas awan habis, awan akan hancur
-        if (cloudDestroy == true)
-        {
-            cloudTimer += Time.deltaTime;
-            if (cloudTimer > 16.01f)
-            {
-                Destroy(cloud);
-            }
-        }
     }
 
-    // Jika awan menyentuh pinggir map, dia akan berhenti
+    // Control awan tidak bisa keluar dari map
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BatasMap")
