@@ -9,12 +9,17 @@ public class movementCloud1 : MonoBehaviour
     public Vector2 targetPosition;
     float speed = 0.25f;
     float sp, timer, cloudTimer;
-    bool cek;
-    public bool respawn;
+    public float alphaLevel;
+    SpriteRenderer sr;
+    public bool cloudDestroy = false;
+    public bool hujan = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.color = new Color(1, 1, 1, 0);
+        timer = 0;
     }
 
     void Update()
@@ -28,19 +33,28 @@ public class movementCloud1 : MonoBehaviour
             {
                 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 sp = speed;
-                anim.SetBool("Move", true);
-                respawn = true;
+                hujan = true;
             }
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * sp);
         }
-    }
 
-    // Control awan tidak bisa keluar dari map
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "BatasMap")
+        else
         {
-            sp = 0;
+            alphaLevel += (Time.deltaTime / 16);
+            sr.color = new Color(1, 1, 1, alphaLevel);
+        }
+
+        if (hujan == true)
+        {
+            cloudTimer += Time.deltaTime;
+            if (cloudTimer > 12.0f)
+            {
+                cloudDestroy = true;
+                anim.SetBool("Hujan", true);
+                if(cloudTimer > 16f)
+                    Destroy(gameObject);
+            }
         }
     }
+
 }

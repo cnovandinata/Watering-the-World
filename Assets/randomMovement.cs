@@ -62,4 +62,13 @@ public class randomMovement : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "awan")
+        {
+            if(collision.gameObject.GetComponent<movementCloud1>().cloudDestroy == true)
+                Destroy(gameObject);
+        }
+    }
 }
